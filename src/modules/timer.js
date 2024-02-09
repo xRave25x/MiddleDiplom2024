@@ -36,14 +36,20 @@ const timer = deadLine => {
             timerSecond.textContent = getTime.seconds
         })
 
-
-
         if (getTime.timeRemaning < 0) {
             clearInterval(interval);
-            timerDays.textContent = '00';
-            timerHours.textContent = '00';
-            timerMinutes.textContent = '00';
-            timerSeconds.textContent = '00';
+            timerDays.forEach(timerDay => {
+                timerDay.textContent = '00';
+            })
+            timerHours.forEach(timerHour => {
+                timerHour.textContent = '00';
+            })
+            timerMinutes.forEach(timerMinute => {
+                timerMinute.textContent = '00';
+            })
+            timerSeconds.forEach(timerSecond => {
+                timerSecond.textContent = '00';
+            })
 
         }
     };
