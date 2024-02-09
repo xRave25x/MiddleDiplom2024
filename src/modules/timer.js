@@ -1,8 +1,8 @@
 const timer = deadLine => {
-    const timerDays = document.getElementById('timer-days');
-    const timerHours = document.getElementById('timer-hours');
-    const timerMinutes = document.getElementById('timer-minutes');
-    const timerSeconds = document.getElementById('timer-seconds');
+    const timerDays = document.querySelectorAll('#timer-days');
+    const timerHours = document.querySelectorAll('#timer-hours');
+    const timerMinutes = document.querySelectorAll('#timer-minutes');
+    const timerSeconds = document.querySelectorAll('#timer-seconds');
 
     let interval = 0;
 
@@ -23,11 +23,18 @@ const timer = deadLine => {
     };
     const updateClock = () => {
         const getTime = getTimeRemaning();
-
-        timerDays.textContent = getTime.days
-        timerHours.textContent = getTime.hours;
-        timerMinutes.textContent = getTime.minutes;
-        timerSeconds.textContent = getTime.seconds;
+        timerDays.forEach(timerDay => {
+            timerDay.textContent = getTime.days
+        })
+        timerHours.forEach(timerHour => {
+            timerHour.textContent = getTime.hours
+        })
+        timerMinutes.forEach(timerMinute => {
+            timerMinute.textContent = getTime.minutes
+        })
+        timerSeconds.forEach(timerSecond => {
+            timerSecond.textContent = getTime.seconds
+        })
 
 
 
