@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('20 february 2024');\n\n//# sourceURL=webpack://middle_diplom/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n/* harmony import */ var _modules_scrollTop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scrollTop */ \"./src/modules/scrollTop.js\");\n\r\n\r\n\r\n\r\n(0,_modules_scrollTop__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('20 february 2024');\n\n//# sourceURL=webpack://middle_diplom/./src/index.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\r\n    const overlay = document.querySelector('.overlay');\r\n    const headerModal = document.querySelector('.header-modal');\r\n    const btnCall = document.querySelector('.button');\r\n    const servicesBtns = document.querySelectorAll('.service-button');\r\n    const servicesModal = document.querySelector('.services-modal');\r\n    const modal = document.querySelectorAll('.modalContainer');\r\n    const close = document.querySelectorAll('.closeModal');\r\n\r\n    \r\n    const closeModal = () => {\r\n        modal.forEach(modalElem => {\r\n            modalElem.style.display = 'none';\r\n        })\r\n        overlay.style.display = 'none';\r\n    }\r\n\r\n    btnCall.addEventListener('click', () => {\r\n        overlay.style.display = 'block';\r\n        headerModal.style.display = 'block';\r\n    })\r\n\r\n    servicesBtns.forEach(button => button.addEventListener('click', () => {\r\n        servicesModal.style.display = 'block';\r\n        overlay.style.display = 'block';\r\n    }))\r\n\r\n    close.forEach(modalElem => modalElem.addEventListener('click', () => {\r\n\r\n        closeModal();\r\n    }));\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack://middle_diplom/./src/modules/modal.js?");
+
+/***/ }),
+
+/***/ "./src/modules/scrollTop.js":
+/*!**********************************!*\
+  !*** ./src/modules/scrollTop.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst scrollTop = () => {\r\n    const scrollBtn = document.querySelector('.smooth-scroll');\r\n    let timer;\r\n\r\n    const scroll = () => {\r\n        const top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);\r\n\r\n\t    if(top > 0) {\r\n\t\t    window.scrollBy(0,-100);    \r\n\t    } else clearInterval(timer);\r\n    };\r\n\r\n    scrollBtn.addEventListener('click', () => {  \r\n\r\n        timer = setInterval(() => {\r\n            scroll();\r\n        },20)\r\n    });\r\n\r\n    document.addEventListener('DOMContentLoaded', () => {\r\n\r\n        window.onscroll = function () {\r\n            if (window.scrollY > 480) {\r\n                scrollBtn.style.display = \"block\";\r\n            } else {\r\n                scrollBtn.style.display = \"none\";\r\n            };\r\n        };\r\n    });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollTop);\n\n//# sourceURL=webpack://middle_diplom/./src/modules/scrollTop.js?");
 
 /***/ }),
 
