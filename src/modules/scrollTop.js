@@ -19,7 +19,7 @@ const scrollTop = () => {
 
     document.addEventListener('DOMContentLoaded', () => {
 
-        window.onscroll = function () {
+        window.onscroll = () => {
             if (window.scrollY > 480) {
                 scrollBtn.style.display = "block";
             } else {
