@@ -1666,6 +1666,16 @@ input.error {
   transform: rotate(90deg);
 }
 
+.activeSlide{
+	display: block!important;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s
+}
+.sliderSlide{
+	display: none;
+	transition: opacity .5s
+}
+
 @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;
