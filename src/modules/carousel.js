@@ -5,16 +5,27 @@ const carousel = () => {
     const width = window.innerWidth;
 
     let activeSlide = 0;
+    let coutActiveSlide = width <= 576 ? 1: 3;
 
     if( width <= 576) {
+        const slidesText = document.querySelectorAll('.benefit-title');
+
         slides[1].classList.remove('activeSlide');
         slides[2].classList.remove('activeSlide');
         wrapSlides.style.justifyContent = 'center';
+
+        // исправил изменение высоты элемента benefits__item, который изменял высоту в зависимости от длинны текста
+        slidesText.forEach(slide => {
+            slide.style.lineHeight = '1.5em';
+            slide.style.height = '3em';
+        })
+
     }
 
-    const renderSlide = () => {       
+    const renderSlide = () => {  
+        
         if( width <= 576 ){
-            
+
             for(let i = 0; i < slides.length; i++){           
                 if(i >= activeSlide && i <= activeSlide){
                     slides[i].classList.add('activeSlide');
@@ -35,23 +46,25 @@ const carousel = () => {
     }
 
     const prev = () => {
-        if(activeSlide - 1 >= 0){
+
+        if(activeSlide > 0){
             activeSlide--;
-            renderSlide();
+        } else {
+            activeSlide = slides.length  - coutActiveSlide;
         }
-        // if(activeSlide <= slides.length -1) {
-        //     activeSlide = 0;
-        // }
+        renderSlide();
     };
 
+
     const next = () => {
-        if(activeSlide + 3 < slides.length){
+
+        if(activeSlide < slides.length - coutActiveSlide){
             activeSlide++; 
-            renderSlide();
-        }
-        if(activeSlide > slides.length) {
+        } else {
             activeSlide = 0;
         }
+        renderSlide();
+
     };
 
     arrows.addEventListener('click', e => {
@@ -62,9 +75,6 @@ const carousel = () => {
         if (e.target.closest('.benefits__arrow--left')) {
             prev();
         }
-
-
-
     });
 
 }

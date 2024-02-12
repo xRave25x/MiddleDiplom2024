@@ -8,6 +8,6 @@ import carousel from "./modules/carousel";
 scrollTop();
 modal();
 sliderServices();
-calc();
 carousel();
+calc();
 timer('20 february 2024');
