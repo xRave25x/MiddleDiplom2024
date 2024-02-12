@@ -4,21 +4,34 @@ const sliderServices = () => {
     const width = window.innerWidth;
     let activeSlide = 0;
 
-    if( width <= 576 ){
+
+    if( width <= 576) {
         slides[1].classList.remove('activeSlide');
-        
     }
 
-    const renderSlide = () => {
-        
-        for(let i = 0; i < slides.length; i++){           
-            if(i >= activeSlide && i <= activeSlide + 1){
-                slides[i].classList.add('activeSlide');
-            } else {
-                slides[i].classList.remove('activeSlide');
+
+    const renderSlide = () => {       
+        if( width <= 576 ){
+            slides[1].classList.remove('activeSlide');
+            
+            for(let i = 0; i < slides.length; i++){           
+                if(i >= activeSlide && i <= activeSlide){
+
+                    slides[i].classList.add('activeSlide');
+                } else {
+                    slides[i].classList.remove('activeSlide');
+                }
             }
-        } 
-        
+
+        } else {
+            for(let i = 0; i < slides.length; i++){           
+                if(i >= activeSlide && i <= activeSlide + 1){
+                    slides[i].classList.add('activeSlide');
+                } else {
+                    slides[i].classList.remove('activeSlide');
+                }
+            } 
+        }
     }
 
     const prev = () => {
