@@ -13,6 +13,14 @@ modal();
 sliderServices();
 carousel();
 calc();
-sendForm();
+sendForm({
+    formName: 'form[name="action-form"]',
+    someElemId: 'calc-total'
+});
+
+sendForm({
+    formName: 'form[name="action-form2"]',
+    someElemId: 'calc-total'
+});
 
 timer('20 february 2024');
