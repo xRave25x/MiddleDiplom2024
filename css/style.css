@@ -785,10 +785,10 @@ p.services-image_mobile {
   background: url("../images/zoom.png") no-repeat center
     rgba(79, 104, 110, 0.42);
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  left: 25%;
   top: 0;
-  left: 0;
   opacity: 0;
 }
 .document-inner:hover .document-overlay {
@@ -1675,6 +1675,23 @@ input.error {
 .sliderSlide{
 	display: none;
 	transition: opacity .5s
+}
+
+.sertificate-document{
+  cursor: zoom-in;
+}
+
+.modalBlock{
+  
+  position: fixed;
+    display: none;
+    z-index: 1;
+    top: 10%;
+    right: 40%;
+    height: 85%;
+    width: 19%;
+    background: url(/images/documents/original/document4.jpg) no-repeat 50% 50%;
+    background-size: contain;
 }
 
 @media (min-width: 576px) {
