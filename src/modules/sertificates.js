@@ -1,11 +1,8 @@
-
 const sercificates = () => {
     const modalBlock = document.querySelector('.modalSertificate');
     const modalSertificateItems = document.querySelectorAll('.sertificate-document');
     const documentOverlays = document.querySelectorAll('.document-overlay');
     const overlay = document.querySelector('.overlay');
-
-    
 
     const modalDiv = document.createElement('div');
     modalDiv.classList.add('modalBlock');
