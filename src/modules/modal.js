@@ -5,7 +5,7 @@ const modal = () => {
     const servicesBtns = document.querySelectorAll('.service-button');
     const servicesModal = document.querySelector('.services-modal');
     const modal = document.querySelectorAll('.modalContainer');
-    const close = document.querySelectorAll('.closeModal');
+    const close = document.querySelectorAll('.close-modal');
 
     
     const closeModal = () => {

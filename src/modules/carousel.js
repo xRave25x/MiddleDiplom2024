@@ -10,8 +10,8 @@ const carousel = () => {
     if( width <= 576) {
         const slidesText = document.querySelectorAll('.benefit-title');
 
-        slides[1].classList.remove('activeSlide');
-        slides[2].classList.remove('activeSlide');
+        slides[1].classList.remove('active-slide');
+        slides[2].classList.remove('active-slide');
         wrapSlides.style.justifyContent = 'center';
 
         // исправил изменение высоты элемента benefits__item, который изменял высоту в зависимости от длинны текста
@@ -28,18 +28,18 @@ const carousel = () => {
 
             for(let i = 0; i < slides.length; i++){           
                 if(i >= activeSlide && i <= activeSlide){
-                    slides[i].classList.add('activeSlide');
+                    slides[i].classList.add('active-slide');
                 } else {
-                    slides[i].classList.remove('activeSlide');
+                    slides[i].classList.remove('active-slide');
                 }
             }
 
         } else {
             for(let i = 0; i < slides.length; i++){           
                 if(i >= activeSlide && i <= activeSlide + 2){
-                    slides[i].classList.add('activeSlide');
+                    slides[i].classList.add('active-slide');
                 } else {
-                    slides[i].classList.remove('activeSlide');
+                    slides[i].classList.remove('active-slide');
                 }
             } 
         }

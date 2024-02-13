@@ -1,12 +1,12 @@
 const sliderServices = () => {
     const serviceArrows = document.querySelector('.services-arrows')
-    const slides = document.querySelectorAll('.sliderSlide');
+    const slides = document.querySelectorAll('.slider-slide');
     const width = window.innerWidth;
     let activeSlide = 0;
 
 
     if( width <= 576) {
-        slides[1].classList.remove('activeSlide');
+        slides[1].classList.remove('active-slide');
     }
 
 
@@ -16,18 +16,18 @@ const sliderServices = () => {
             for(let i = 0; i < slides.length; i++){           
                 if(i >= activeSlide && i <= activeSlide){
 
-                    slides[i].classList.add('activeSlide');
+                    slides[i].classList.add('active-slide');
                 } else {
-                    slides[i].classList.remove('activeSlide');
+                    slides[i].classList.remove('active-slide');
                 }
             }
 
         } else {
             for(let i = 0; i < slides.length; i++){           
                 if(i >= activeSlide && i <= activeSlide + 1){
-                    slides[i].classList.add('activeSlide');
+                    slides[i].classList.add('active-slide');
                 } else {
-                    slides[i].classList.remove('activeSlide');
+                    slides[i].classList.remove('active-slide');
                 }
             } 
         }
