@@ -2,7 +2,7 @@ const validate = (formData) => {
     const fio = formData.get('fio');
     const phone = formData.get('phone');
 
-    if(fio === '' && phone === ''){
+    if(fio === '' || phone === ''){
         return false;
     }
 

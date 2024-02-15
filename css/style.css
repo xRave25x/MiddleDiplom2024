@@ -1686,14 +1686,19 @@ input.error {
   position: fixed;
     display: none;
     z-index: 1;
-    top: 10%;
-    right: 40%;
-    height: 85%;
-    width: 19%;
+    top: 1%;
+    right: 27%;
+    height: 100%;
+    width: 50%;
     background: url(/images/documents/original/document4.jpg) no-repeat 50% 50%;
     background-size: contain;
 }
 
+@media (max-width: 576px) {
+  .benefits-wrap {
+  justify-content: center;
+  }
+}
 @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;

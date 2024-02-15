@@ -1,20 +1,17 @@
-const carousel = () => {
-    const slides = document.querySelectorAll('.benefits__item');
-    const arrows = document.querySelector('.benefits-arrows');
-    const wrapSlides = document.querySelector('.benefits-wrap');
+const carousel = ({slidesName,someArrows,arrowRight,arrowLeft,count,countSecond}) => {
+    const slides = document.querySelectorAll(slidesName);
+    const arrows = document.querySelector(someArrows);
     const width = window.innerWidth;
 
     let activeSlide = 0;
-    let coutActiveSlide = width <= 576 ? 1: 3;
+    let coutActiveSlide = width <= 576 ? 1: count;
 
     if( width <= 576) {
         const slidesText = document.querySelectorAll('.benefit-title');
 
         slides[1].classList.remove('active-slide');
         slides[2].classList.remove('active-slide');
-        wrapSlides.style.justifyContent = 'center';
 
-        // исправил изменение высоты элемента benefits__item, который изменял высоту в зависимости от длинны текста
         slidesText.forEach(slide => {
             slide.style.lineHeight = '1.5em';
             slide.style.height = '3em';
@@ -22,8 +19,7 @@ const carousel = () => {
 
     }
 
-    const renderSlide = () => {  
-        
+    const renderSlide = () => {          
         if( width <= 576 ){
 
             for(let i = 0; i < slides.length; i++){           
@@ -36,7 +32,7 @@ const carousel = () => {
 
         } else {
             for(let i = 0; i < slides.length; i++){           
-                if(i >= activeSlide && i <= activeSlide + 2){
+                if(i >= activeSlide && i <= activeSlide + countSecond){
                     slides[i].classList.add('active-slide');
                 } else {
                     slides[i].classList.remove('active-slide');
@@ -46,6 +42,7 @@ const carousel = () => {
     }
 
     const prev = () => {
+        
 
         if(activeSlide > 0){
             activeSlide--;
@@ -68,11 +65,11 @@ const carousel = () => {
     };
 
     arrows.addEventListener('click', e => {
-        if (e.target.closest('.benefits__arrow--right')) {
+        if (e.target.closest(arrowRight)) {
             next();
         }
 
-        if (e.target.closest('.benefits__arrow--left')) {
+        if (e.target.closest(arrowLeft)) {
             prev();
         }
     });
